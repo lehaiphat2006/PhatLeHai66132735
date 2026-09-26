@@ -38,3 +38,9 @@ DROP TABLE SanPham
 
  ALTER DATABASE CSDL_ban_hang_online
  MODIFY NAME= PTUDWWEB_LÊHẢIPHÁT_66132735_DB;
+
+ SELECT 
+    name,
+    physical_name
+FROM sys.master_files
+WHERE database_id = DB_ID('PTUDWWEB_LÊHẢIPHÁT_66132735_DB');
