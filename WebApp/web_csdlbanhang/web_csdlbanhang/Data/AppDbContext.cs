@@ -45,6 +45,19 @@ namespace web_csdlbanhang.Data
             return kq;
 
         }
+        public int DonViTinh_Xoa(DonViTinh dvt)
+        {
+            var cmd = Database.GetDbConnection().CreateCommand();
+            cmd.CommandText = "DonViTinh_Xoa";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@MaDVT", dvt.MaDVT));
+            //cmd.Parameters.Add(new SqlParameter("@TenDVT", dvt.TenDVT));
+            Database.OpenConnection();
+            var kq = cmd.ExecuteNonQuery();
+            Database.CloseConnection();
+            return kq;
+
+        }
 
     }
 }

@@ -117,7 +117,7 @@ namespace web_csdlbanhang.Controllers
         }
 
         // GET: DonViTinhs/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(byte? id)
         {
             if (id == null)
             {
@@ -137,12 +137,12 @@ namespace web_csdlbanhang.Controllers
         // POST: DonViTinhs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(byte id)
         {
             var donViTinh = await _context.DonViTinhs.FindAsync(id);
             if (donViTinh != null)
             {
-                _context.DonViTinhs.Remove(donViTinh);
+                _context.DonViTinh_Xoa(donViTinh);
             }
 
             await _context.SaveChangesAsync();
