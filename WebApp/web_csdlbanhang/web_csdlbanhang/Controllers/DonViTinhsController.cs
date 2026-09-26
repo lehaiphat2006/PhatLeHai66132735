@@ -73,7 +73,7 @@ namespace web_csdlbanhang.Controllers
                 return NotFound();
             }
 
-            var donViTinh = await _context.DonViTinhs.FindAsync(id);
+            var donViTinh = await _context.DonViTinhs.FindAsync(id);//neu bao sai cho nay thi vao Model-->DonViTinh.cs de sua .
             if (donViTinh == null)
             {
                 return NotFound();
@@ -97,7 +97,7 @@ namespace web_csdlbanhang.Controllers
             {
                 try
                 {
-                    _context.Update(donViTinh);
+                    _context.DonViTinh_Sua(donViTinh);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
